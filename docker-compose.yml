@@ -1,0 +1,14 @@
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    volumes:
+      - shared_mongo:/data/db # bind the mongodata volume to the /data/db directory in the container
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js # execute the init-mongo.js script when the container starts
+    ports:
+      - 9999:27017 # expose the port 27017 of the container to the host
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root # set the root username for MongoDB
+      - MONGO_INITDB_ROOT_PASSWORD=nguyen # set the root password for MongoDB
+volumes:
+  shared_mongo: # declare the mongodata volume
