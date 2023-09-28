@@ -1,5 +1,5 @@
 // create a new database named testdb
-db = db.getSiblingDB("testdb");
+db = db.getSiblingDB("vehicles_db");
 
 // create a new user for the testdb database
 db.createUser({
@@ -8,13 +8,15 @@ db.createUser({
   roles: [
     {
       role: "readWrite",
-      db: "testdb",
+      db: "vehicles_db",
     },
   ],
 });
 
 // create a new collection named users in the testdb database
 db.createCollection("users");
+db.createCollection("vehicles");
+db.createCollection("violations_vehicles");
 
 // insert some documents into the users collection
 // db.users.insertMany([
