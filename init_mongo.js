@@ -16,7 +16,7 @@ db.createUser({
 // create a new collection named users in the testdb database
 db.createCollection("users");
 db.createCollection("vehicles");
-db.createCollection("violations_vehicles");
+db.createCollection("violation_vehicles");
 
 // insert some documents into the users collection
 // db.users.insertMany([
