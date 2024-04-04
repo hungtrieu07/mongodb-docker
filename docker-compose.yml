@@ -9,5 +9,14 @@ services:
     ports:
       - 9999:27017 # expose the port 27017 of the container to the host
 
+  api:
+    container_name: detection-api
+    image: teamcvaiacademy/vds:demo
+    restart: always
+    ports:
+      - 8080:8080
+      - 8081:8081
+
 volumes:
   shared_mongo: # declare the mongodata volume
+    name: shared_mongo
